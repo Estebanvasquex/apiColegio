@@ -35,4 +35,4 @@ class EstudiantesController{
 
 }
 
-module.exports = new EstudiantesController();
+export default new EstudiantesController;

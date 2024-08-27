@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const estudiantesController = require('../controller/estudiantesController.js');
+import estudiantesController from '../controllers/estudiantesController.js';
 
 
 //Rutas estaticas
@@ -16,4 +16,4 @@ router.route('/:id')
     .put(estudiantesController.actualizar)
     .delete(estudiantesController.borrar)
     
-module.exports = router;
+export default router;

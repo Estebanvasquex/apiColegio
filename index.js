@@ -1,7 +1,9 @@
-const express = require('express')
+import express from 'express'
 const app = express()
-const estudiantesRoutes = require('./views/estudiantesRoutes')
-const profesoresRoutes = require('./views/profesoresRoutes')
+
+import estudiantesRoutes from './views/estudiantesRoutes.js'
+import profesoresRoutes from './views/profesoresRoutes.js'
+
 
 app.get('/', (req, res)=>{res.send ('Hola mundo00000000') });
 

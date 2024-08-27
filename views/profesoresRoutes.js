@@ -1,4 +1,5 @@
-const express = require('express');
+import express from 'express';
+import profesroresController from '../controllers/profesoresController.js';
 const router = express.Router();
 
 //Rutas estaticas
@@ -13,17 +14,9 @@ router.post('/', (req, res) => {
 
 //Rutas dinamicas 
 router.route('/:id')
-    .get((req, res) => {
-        res.json({mensaje: `Consulta profesor por id: `});
-    })
-    .post((req, res) => {
-        res.json({mensaje: `Crear profesor por id: `});
-    })
-    .put((req, res) => {
-        res.json({mensaje: `Actualizar profesor por id: `});
-    })
-    .delete((req, res) => {
-        res.json({mensaje: `Borrar profesor por id: `});
-    });
+    .get(profesroresController.consultarPorId)
+    .post(profesroresController.ingresarPorId)
+    .put(profesroresController.actualizar)
+    .delete(profesroresController.borrar);
     
-module.exports = router;
+export default router;
